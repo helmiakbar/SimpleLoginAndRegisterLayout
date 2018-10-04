@@ -1,41 +1,55 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  DryCodeTest
 //
-//  Created by helmi akbar on 03/10/18.
+//  Created by helmi akbar on 04/10/18.
 //  Copyright © 2018 helmi akbar. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var emailField: UITextField!
+    
     @IBOutlet weak var passwordIcon: UIImageView!
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var phoneIcon: UIImageView!
+    @IBOutlet weak var phoneField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.nameField.delegate = self
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        
-        self.navigationController?.isNavigationBarHidden = true
+        self.phoneField.delegate = self
     }
     
-    //MARK: TextFieldDelagate
+    //MARK: - TextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.emailField {
+        if textField == self.nameField {
             self.userIcon.image = UIImage.init(named: "ic-user-active")
+        } else if textField == self.emailField {
+            self.emailIcon.image = UIImage.init(named: "ic-mail-active")
         } else if textField == self.passwordField {
             self.passwordIcon.image = UIImage.init(named: "ic-password-active")
+        } else if textField == self.phoneField {
+            self.phoneIcon.image = UIImage.init(named: "ic-phone-active")
         }
         self.animateTextField(textField: textField, up:true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.userIcon.image = UIImage.init(named: "ic-user-inactive")
+        self.emailIcon.image = UIImage.init(named: "ic-mail-inactive")
         self.passwordIcon.image = UIImage.init(named: "ic-password-inactive")
+        self.phoneIcon.image = UIImage.init(named: "ic-phone-inactive")
         self.animateTextField(textField: textField, up:false)
         textField.resignFirstResponder()
     }
@@ -70,9 +84,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UIView.commitAnimations()
     }
     
-    //MARK: ButtonAction
-    @IBAction func forgotPasswordBtn(_ sender: Any) {
-        let alertController = UIAlertController(title: "", message: "Forgot Password Pressed", preferredStyle: UIAlertController.Style.alert)
+    //MARK: - ButtonAction
+    @IBAction func registerBtn(_ sender: Any) {
+        let alertController = UIAlertController(title: "", message: "Register Pressed", preferredStyle: UIAlertController.Style.alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
@@ -83,19 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        let alertController = UIAlertController(title: "", message: "Login Pressed", preferredStyle: UIAlertController.Style.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            (result : UIAlertAction) -> Void in
-            print("You pressed OK")
-        }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    @IBAction func registerBtn(_ sender: Any) {
-        self.performSegue(withIdentifier: "registerView", sender: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
-

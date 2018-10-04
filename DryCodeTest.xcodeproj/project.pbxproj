@@ -15,6 +15,7 @@
 		8544447521652AD1004B5A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8544447321652AD1004B5A1C /* LaunchScreen.storyboard */; };
 		8544448021652AD1004B5A1C /* DryCodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544447F21652AD1004B5A1C /* DryCodeTestTests.swift */; };
 		8544448B21652AD1004B5A1C /* DryCodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544448A21652AD1004B5A1C /* DryCodeTestUITests.swift */; };
+		859C7863216611A800551C7E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C7862216611A800551C7E /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8544448621652AD1004B5A1C /* DryCodeTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DryCodeTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8544448A21652AD1004B5A1C /* DryCodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryCodeTestUITests.swift; sourceTree = "<group>"; };
 		8544448C21652AD1004B5A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		859C7862216611A800551C7E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8544446721652ACF004B5A1C /* AppDelegate.swift */,
 				8544446921652ACF004B5A1C /* ViewController.swift */,
+				859C7862216611A800551C7E /* RegisterViewController.swift */,
 				8544446B21652ACF004B5A1C /* Main.storyboard */,
 				8544447121652AD1004B5A1C /* Assets.xcassets */,
 				8544447321652AD1004B5A1C /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				8544446A21652ACF004B5A1C /* ViewController.swift in Sources */,
 				8544446821652ACF004B5A1C /* AppDelegate.swift in Sources */,
 				8544447021652ACF004B5A1C /* DryCodeTest.xcdatamodeld in Sources */,
+				859C7863216611A800551C7E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
